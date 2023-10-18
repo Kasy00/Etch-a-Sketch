@@ -72,3 +72,15 @@ body{
 #clearBtn:hover{
     background-color: antiquewhite;
 }
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-top: 2px solid  #504141;
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+}
