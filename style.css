@@ -3,6 +3,7 @@ body{
     min-height: 100vh;
     margin: 0;
     background-color: beige;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .sketch{
@@ -20,18 +21,15 @@ body{
     background-color: antiquewhite;
 }
 
-.square{
-    user-select: none;
-}
-
 .header{
     text-align: center;
-    font-size: 48px;
+    font-size: 64px;
     min-width: 100vw;
     background-color: rgb(211, 211, 172);
     padding: 20px;
     border-bottom: 5px solid #504141;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .toolbar{
@@ -40,6 +38,8 @@ body{
     justify-content: center;
     align-items: center;
     gap: 50px;
+    border: 3px solid #504141;
+    padding: 20px;
 }
 
 .toolbar > *{
@@ -54,4 +54,21 @@ body{
 #colorPicker{
     width: 150px;
     height: 50px;
+}
+
+#clearBtn{
+    display: flex;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 32px;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #504141;
+}
+
+#clearBtn:hover{
+    background-color: antiquewhite;
 }

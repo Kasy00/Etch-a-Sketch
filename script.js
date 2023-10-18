@@ -2,6 +2,7 @@ const container = document.querySelector('.container');
 const sizeRange = document.getElementById('sizeRange');
 const output = document.getElementById('demo');
 const colorPicker = document.getElementById('colorPicker');
+const clearBtn = document.getElementById('clearBtn');
 
 let gridSize = 16; // default grid size
 let currentSquare = null;
@@ -23,7 +24,6 @@ function drawGrid(gSize){
 
     for(let i = 0; i < gSize*gSize; i++){
         let square = document.createElement('div');
-        square.classList.add('square');
         container.appendChild(square);
 
         square.addEventListener('mousemove', () => {
@@ -35,7 +35,7 @@ function drawGrid(gSize){
 drawGrid(gridSize);
 
 
-container.addEventListener("mousemove", () =>{
+container.addEventListener("mousemove", () => {
     if(isPressed){
         currentSquare.style.backgroundColor = color;
     }
@@ -51,8 +51,13 @@ sizeRange.addEventListener('input', () => {
     drawGrid(gridSize);
  });
 
-output.innerHTML = sizeRange.value;
+clearBtn.addEventListener('click', () => {
+    container.innerHTML = "";
+    drawGrid(gridSize);
+    isPressed = false;
+});
 
+output.innerHTML = sizeRange.value;
 sizeRange.oninput = function(){
     output.innerHTML = this.value;
 }
