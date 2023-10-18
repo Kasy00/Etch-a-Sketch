@@ -1,11 +1,25 @@
 const container = document.querySelector('.container');
 
-let size = 16;
-let currentSqure = null;
+let gridSize = 16; // default grid size
+let squareSize = 38; //default squares size
+let currentSquare = null;
+let isPressed = undefined;
 
 
-function drawGrid(size){
-    for(let i = 0; i < size*size; i++){
+container.addEventListener('mousedown', () => {
+    isPressed = true;
+    currentSquare.style.backgroundColor = "red";
+});
+
+container.addEventListener('mouseup', () => {
+    isPressed = false;
+});
+
+function drawGrid(gSize, sSize){
+    container.style.gridTemplateColumns = `repeat(${gSize}, ${sSize}px)`;
+    container.style.gridTemplateRows = `repeat(${gSize}, ${sSize}px)`;
+
+    for(let i = 0; i < gSize*gSize; i++){
         let square = document.createElement('div');
         square.classList.add('square');
         container.appendChild(square);
@@ -16,8 +30,11 @@ function drawGrid(size){
     }
 }
 
-drawGrid(size);
+drawGrid(gridSize, squareSize);
 
-document.addEventListener("mousemove", () =>{
-    currentSquare.style.backgroundColor = "red";
+
+container.addEventListener("mousemove", () =>{
+    if(isPressed){
+        currentSquare.style.backgroundColor = "red";
+    }
 });
