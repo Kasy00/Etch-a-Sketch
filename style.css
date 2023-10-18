@@ -44,11 +44,13 @@ body{
     gap: 50px;
 }
 
-.colorPick{
+.toolbar > *{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 #colorPicker{

@@ -1,4 +1,6 @@
 const container = document.querySelector('.container');
+const sizeRange = document.getElementById('sizeRange');
+const output = document.getElementById('demo');
 
 let gridSize = 16; // default grid size
 let squareSize = 38; //default squares size
@@ -38,3 +40,9 @@ container.addEventListener("mousemove", () =>{
         currentSquare.style.backgroundColor = "red";
     }
 });
+
+output.innerHTML = sizeRange.value;
+
+sizeRange.oninput = function(){
+    output.innerHTML = this.value;
+}
