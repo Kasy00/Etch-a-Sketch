@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="header">Etch-a-Sketch</div>
+    <div class="sketch">
+        <div class="toolbar">
+            <div class="colorPick">
+                <label for="colorPicker">COLOR:</label>
+                <input type="color" id="colorPicker">
+            </div>
+            <input type="range" id="sizeRange" min="10" max="100" value="38">
+        </div>
+        <div class="container"></div>
     </div>
     <script src="script.js"></script>
 </body>

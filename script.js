@@ -3,7 +3,7 @@ const container = document.querySelector('.container');
 let gridSize = 16; // default grid size
 let squareSize = 38; //default squares size
 let currentSquare = null;
-let isPressed = undefined;
+let isPressed = false;
 
 
 container.addEventListener('mousedown', () => {
