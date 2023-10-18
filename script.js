@@ -57,7 +57,7 @@ clearBtn.addEventListener('click', () => {
     isPressed = false;
 });
 
-output.innerHTML = sizeRange.value;
+output.innerHTML = `${sizeRange.value} x ${sizeRange.value}`;
 sizeRange.oninput = function(){
-    output.innerHTML = this.value;
+    output.innerHTML = `${this.value} x ${this.value}`;
 }
